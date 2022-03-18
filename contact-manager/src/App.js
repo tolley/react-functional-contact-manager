@@ -1,13 +1,11 @@
 import React from 'react';
-import { Counter } from './features/counter/Counter';
+import { Dashboard } from './features/dashboard/Dashboard';
 import './App.scss';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Counter />
-      </header>
+      <Dashboard />
     </div>
   );
 }
