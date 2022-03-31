@@ -1,37 +1,37 @@
 // A primarily display component that will load and display 
 // the contacts
-import React, { useEffect, useState } from 'react';
-import { fetchContacts } from './ContactsCollectionAPI';
+import React, { useEffect, useState, useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+// import { fetchContacts } from './ContactsCollectionAPI';
+import { read } from './ContactsSlice';
 import ContactCard from '../contactCard/ContactCard';
-import _ from 'lodash';
+// import _ from 'lodash';
 
 const ContactsCollection = () => {
-    const [allContactData, setAllContactData] = useState([]);
-    const [displayMode, setDisplayMode] = useState('card');
+    const dispatch = useDispatch();
+    const contacts = useSelector(state => state.contacts);
 
     // Shortcut until I implement filtering
-    const renderableContacts = allContactData;
+    const renderableContacts = contacts.contacts;
 
+    // Load our contact data from our API
     useEffect(() => {
-        const allContacts = fetchContacts();
-        setAllContactData(allContacts);
+        dispatch(read());
     }, []);
 
-    if(allContactData.length) {
-        return (
-            <React.Fragment>
-                {
-                    renderableContacts.map(contactData => (
-                        <ContactCard contactData={contactData} />
-                    ))
-                }
-            </React.Fragment>
-        );
-    } else {
+    if(contacts.loading) {
         return (
             <div>Loading...</div>
         );
-    };
+    } else {
+        return (
+            <React.Fragment>
+                {renderableContacts.map(contactData => (
+                    <ContactCard contactData={contactData} key={contactData.id} />
+                ))}
+            </React.Fragment>
+        );
+    }
 }
 
 export default ContactsCollection;

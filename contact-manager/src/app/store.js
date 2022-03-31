@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import contactsReducer from '../features/contactsCollection/ContactsSlice';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 
 export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
+  reducer: { contacts: contactsReducer },
+  middleware: [thunk, logger],
+  devTools: true,
 });
