@@ -1,11 +1,10 @@
 // A primarily display component that will load and display 
 // the contacts
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // import { fetchContacts } from './ContactsCollectionAPI';
 import { read } from './ContactsSlice';
 import ContactCard from '../contactCard/ContactCard';
-// import _ from 'lodash';
 
 const ContactsCollection = () => {
     const dispatch = useDispatch();
@@ -17,7 +16,7 @@ const ContactsCollection = () => {
     // Load our contact data from our API
     useEffect(() => {
         dispatch(read());
-    }, []);
+    }, [dispatch]);
 
     if(contacts.loading) {
         return (
@@ -25,11 +24,11 @@ const ContactsCollection = () => {
         );
     } else {
         return (
-            <React.Fragment>
+            <div id="contacts_collection">
                 {renderableContacts.map(contactData => (
                     <ContactCard contactData={contactData} key={contactData.id} />
                 ))}
-            </React.Fragment>
+            </div>
         );
     }
 }

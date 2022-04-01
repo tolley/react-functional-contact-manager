@@ -1,12 +1,54 @@
-import React, { useState } from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, ListGroup } from 'react-bootstrap';
+import Address from '../address/Address';
+import PhoneNumber from '../phoneNumber/PhoneNumber';
 
 export default function ContactCard(props) {
-    const contactData = props.contactData;
+    const {
+        id,
+        firstname,
+        lastname,
+        phone,
+        email,
+        street,
+        street2,
+        city,
+        state,
+        zip
+    } = props.contactData;
+
+    const addressData = {
+        street: street,
+        street2: street2,
+        city: city,
+        state: state,
+        zip: zip
+    };
 
     return (
-        <div className="contactCard">
-            {contactData.firstname + ' ' + contactData.lastname}
-        </div>
+        <Card className="contactCard">
+            <Card.Title>
+                <span className="name ucfirst">
+                    {firstname}
+                </span>
+                &nbsp;
+                <span className="name ucfirst">
+                    {lastname}
+                </span>
+            </Card.Title>
+            <ListGroup variant="flush">
+                <ListGroup.Item>
+                    <a href={'mailto:' + email}>
+                        {email}
+                    </a>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                    <PhoneNumber phoneNumber={phone} />
+                </ListGroup.Item>
+                <ListGroup.Item>
+                    <Address addressData={addressData} />
+                </ListGroup.Item>
+                <ListGroup.Item></ListGroup.Item>
+            </ListGroup>
+        </Card>
     );
 };

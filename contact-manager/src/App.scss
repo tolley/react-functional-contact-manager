@@ -16,3 +16,33 @@
 .App-link {
   color: rgb(112, 76, 182);
 }
+
+.ucfirst {
+  text-transform: capitalize;
+}
+
+.name {
+  font-weight: bold;
+}
+
+div#contacts_collection {
+  height: 90vh;
+  width: 100vw;
+
+  div.contactCard {
+    float: left;
+    border: solid 2px #0f0;
+    width: 30%;
+    text-align: left;
+    min-width: 300px;
+    max-width: 500px;
+    height: 230px;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 0px 5px 0px 5px;
+  }
+}
+
+.mailingAddress {
+  border: solid 1px #0f0;
+}

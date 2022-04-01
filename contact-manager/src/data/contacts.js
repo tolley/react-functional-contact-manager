@@ -5,9 +5,9 @@ const contacts = [
         "lastname": "tolley",
         "phone": "7031231234",
         "email": "tolleycr@tolley.com",
-        "street": "123 Main St",
-        "street2": "apt 1B",
-        "city": "pleasantville",
+        "street": "32 Haxall Court",
+        "street2": "",
+        "city": "Sterling",
         "state": "va",
         "zip": "20165"
     },
@@ -41,8 +41,8 @@ const contacts = [
         "lastname": "tolley",
         "phone": "4348675309",
         "email": "tolleyb@tolley.com",
-        "street": "circle dr",
-        "street2": "",
+        "street": "486 circle dr",
+        "street2": "mountain view lane",
         "city": "bedford",
         "state": "va",
         "zip": "24552"
