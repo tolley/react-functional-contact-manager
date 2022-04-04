@@ -1,10 +1,11 @@
 import { Card, ListGroup } from 'react-bootstrap';
 import Address from '../address/Address';
 import PhoneNumber from '../phoneNumber/PhoneNumber';
+import MailTo from '../mailTo/MailTo';
 
 export default function ContactCard(props) {
     const {
-        id,
+        // id,
         firstname,
         lastname,
         phone,
@@ -37,9 +38,7 @@ export default function ContactCard(props) {
             </Card.Title>
             <ListGroup variant="flush">
                 <ListGroup.Item>
-                    <a href={'mailto:' + email}>
-                        {email}
-                    </a>
+                    <MailTo email={email} />
                 </ListGroup.Item>
                 <ListGroup.Item>
                     <PhoneNumber phoneNumber={phone} />

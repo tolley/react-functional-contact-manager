@@ -82,6 +82,18 @@ const contacts = [
         "city": "greendale",
         "state": "ca",
         "zip": "90210"
+    },
+    {
+        "id": 8,
+        "firstname": "robin",
+        "lastname": "tolley",
+        "phone": "4343841541",
+        "email": "robin@tolley.com",
+        "street": "112 burgess rd",
+        "street2": "",
+        "city": "madison heights",
+        "state": "va",
+        "zip": "24572"
     }
 ]
 

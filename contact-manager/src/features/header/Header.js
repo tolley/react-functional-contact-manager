@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { 
     Navbar, 
     Nav,
@@ -7,9 +8,16 @@ import {
     Form,
     FormControl,
     Button,
+    Dropdown,
+    ButtonGroup,
+    // DropdownButton,
 } from 'react-bootstrap';
+import { setDisplayMode } from './headerSlice';
 
 export default function Header() {
+    const dispatch = useDispatch();
+    const displayMode = useSelector(state => state.header.displayMode);
+
     return (
         <div className="dashboard">
             <Navbar bg="dark" variant="dark" sticky="top" expand={false}>
@@ -28,9 +36,24 @@ export default function Header() {
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Nav className="justify-content-end flex-grow-1 pe-3">
-                                <Nav.Link href="/dashboard">Home</Nav.Link>
                                 <Nav.Link href="/about">About</Nav.Link>
                             </Nav>
+                            <Nav className="justify-content=end flex-grow-1 pe-3">
+                                Dashboard Mode:
+                                <ButtonGroup
+                                    variant="secondary"
+                                    size="sm">
+                                    <Dropdown.Item className={(displayMode === 'card')? 'active': ''}
+                                        onClick={() => dispatch(setDisplayMode('card')) }>
+                                        Card
+                                    </Dropdown.Item>
+                                    <Dropdown.Item className={(displayMode === 'list')? 'active': ''}
+                                        onClick={() => dispatch(setDisplayMode('list')) }>
+                                        List
+                                    </Dropdown.Item>
+                                </ButtonGroup>
+                            </Nav>
+                            <br />
                             <Form className="d-flex">
                                 <FormControl
                                     type="search"
