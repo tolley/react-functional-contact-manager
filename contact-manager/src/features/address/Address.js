@@ -63,7 +63,7 @@ function buildCityStateZipDisplayStr(city, state, zip) {
     return returnStr;
 };
 
-function buildAddressLinkURL(addressData) {
+export const buildAddressLinkURL = (addressData) => {
     const {
         street,
         street2,
@@ -91,4 +91,4 @@ function buildAddressLinkURL(addressData) {
     linkUrl = encodeURI(linkUrl);
 
     return linkUrl;
-}
+};
