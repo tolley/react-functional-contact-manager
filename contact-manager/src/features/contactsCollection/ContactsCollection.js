@@ -2,7 +2,7 @@
 // the contacts
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Table } from 'react-bootstrap';
+import { Table, Spinner } from 'react-bootstrap';
 import { read } from './ContactsSlice';
 import ContactCard from '../contactCard/ContactCard';
 import ContactListItem from '../contactListItem/ContactListItem';
@@ -22,7 +22,10 @@ const ContactsCollection = () => {
 
     if(contacts.loading) {
         return (
-            <div>Loading...</div>
+            <span>
+                <br />
+                <Spinner animation="border" role="status" size="lg" />
+            </span>
         );
     } else {
         switch(displayMode) {

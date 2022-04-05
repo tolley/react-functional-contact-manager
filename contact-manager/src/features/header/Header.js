@@ -13,6 +13,7 @@ import {
     // DropdownButton,
 } from 'react-bootstrap';
 import { setDisplayMode } from './headerSlice';
+import About from '../about/About';
 
 export default function Header() {
     const dispatch = useDispatch();
@@ -35,9 +36,6 @@ export default function Header() {
                             </Offcanvas.Title>
                         </Offcanvas.Header>
                         <Offcanvas.Body>
-                            <Nav className="justify-content-end flex-grow-1 pe-3">
-                                <Nav.Link href="/about">About</Nav.Link>
-                            </Nav>
                             <Nav className="justify-content=end flex-grow-1 pe-3">
                                 Dashboard Mode:
                                 <ButtonGroup
@@ -57,12 +55,14 @@ export default function Header() {
                             <Form className="d-flex">
                                 <FormControl
                                     type="search"
-                                    placeholder="Search"
+                                    placeholder="Filter"
                                     className="me-2"
-                                    aria-label="Search"
+                                    aria-label="Filter"
                                 />
-                                <Button variant="outline-success">Search</Button>
                             </Form>
+                            <Nav className="justify-content-end flex-grow-1 pe-3">
+                                <About />
+                            </Nav>
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>                        
                 </Container>
