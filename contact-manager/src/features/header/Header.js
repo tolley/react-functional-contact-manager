@@ -7,7 +7,6 @@ import {
     Offcanvas,
     Form,
     FormControl,
-    Button,
     Dropdown,
     ButtonGroup,
     // DropdownButton,
@@ -36,6 +35,9 @@ export default function Header() {
                             </Offcanvas.Title>
                         </Offcanvas.Header>
                         <Offcanvas.Body>
+                            <Nav className="justify-content-end flex-grow-1 pe-3">
+                                <About /><br />
+                            </Nav>
                             <Nav className="justify-content=end flex-grow-1 pe-3">
                                 Dashboard Mode:
                                 <ButtonGroup
@@ -60,9 +62,6 @@ export default function Header() {
                                     aria-label="Filter"
                                 />
                             </Form>
-                            <Nav className="justify-content-end flex-grow-1 pe-3">
-                                <About />
-                            </Nav>
                         </Offcanvas.Body>
                     </Navbar.Offcanvas>                        
                 </Container>

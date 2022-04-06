@@ -21,10 +21,16 @@
   text-transform: capitalize;
 }
 
-a.mockLink {
-  color: 00f;
-  text-decoration: underline;
+button.mockLink {
+  background-color: transparent;
+  border: none;
   cursor: pointer;
+  text-decoration: underline;
+  display: inline;
+  color: #0D6EFD;
+  text-align: left;
+  margin: 0;
+  padding: 0;
 }
 
 .uc {

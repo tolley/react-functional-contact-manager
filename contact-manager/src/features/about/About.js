@@ -7,13 +7,13 @@ export default function About(props) {
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
-    const url = "";
-
     return (
         <>
-            <a className="mockLink" onClick={handleShow}>
-                About
-            </a>
+            <button type="button"
+                className="mockLink" 
+                onClick={handleShow}>
+                    About
+            </button>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>
@@ -42,6 +42,7 @@ export default function About(props) {
                         bootstrap, lodash, and axios. The code was tracked with GIT 
                         (<a 
                             target="_blank" 
+                            rel="noreferrer"
                             href="https://github.com/tolley/react-functional-contact-manager">
                                 github
                         </a>)
