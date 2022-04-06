@@ -56,6 +56,11 @@ div#contacts_collection {
     margin: 10px;
     border-radius: 10px;
     padding: 0px 5px 0px 5px;
+
+    .deleteLink {
+      float: right;
+      cursor: pointer;
+    }
   }
 }
 

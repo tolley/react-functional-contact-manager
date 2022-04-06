@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchContacts } from './ContactsCollectionAPI';
+import _ from 'lodash';
 
 const initialState = {
   contacts: [],
@@ -27,7 +28,8 @@ export const contactsSlice = createSlice({
       // action.payload
     },
     remove: (state, action) => {
-      // action.payload
+      // The payload is the id of the contact to remove
+      _.remove(state.contacts, contact => contact.id === action.payload);
     },
   },
   extraReducers: (builder) => {

@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Table, Spinner } from 'react-bootstrap';
 import { read } from './ContactsSlice';
+import contact_fields from '../../data/contact_fields.json';
 import ContactCard from '../contactCard/ContactCard';
 import ContactListItem from '../contactListItem/ContactListItem';
 
@@ -60,15 +61,11 @@ function renderList(contacts) {
         <Table responsive="md">
             <thead>
                 <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Phone #</th>
-                    <th>Email</th>
-                    <th>Street</th>
-                    <th>Street 2</th>
-                    <th>City</th>
-                    <th>State</th>
-                    <th>Zip</th>
+                    <th>  
+                    </th>
+                    {contact_fields.map(field => (
+                        <th scope="col">{field.displayName}</th>
+                    ))}
                 </tr>
             </thead>
             <tbody>

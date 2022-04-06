@@ -1,4 +1,4 @@
-const contacts = [
+[
     {
         "id": 1,
         "firstname": "chris",
@@ -96,5 +96,3 @@ const contacts = [
         "zip": "24572"
     }
 ]
-
-export default contacts;

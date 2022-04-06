@@ -1,0 +1,38 @@
+[
+    {
+        "name": "firstname",
+        "displayName": "First Name"
+    },
+    {
+        "name": "lastname",
+        "displayName": "Last Name"
+    },
+    {
+        "name": "phone",
+        "displayName": "Phone Number"
+    },
+    {
+        "name": "email",
+        "displayName": "Email Address"
+    },
+    {
+        "name": "street",
+        "displayName": "Street Address"
+    },
+    {
+        "name": "street2",
+        "displayName": "Street 2"
+    },
+    {
+        "name": "city",
+        "displayName": "City"
+    },
+    {
+        "name": "state",
+        "displayName": "State"
+    },
+    {
+        "name": "zip",
+        "displayName": "Zip"
+    }
+]

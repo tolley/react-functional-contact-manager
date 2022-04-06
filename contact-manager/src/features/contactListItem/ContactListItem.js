@@ -1,10 +1,14 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import PhoneNumber from '../phoneNumber/PhoneNumber';
 import MailTo from '../mailTo/MailTo';
 import { buildAddressLinkURL } from '../address/Address';
+import { remove } from '../contactsCollection/ContactsSlice';
 
 export default function ContactListItem(props) {
+    const dispatch = useDispatch();
     const {
+        id,
         firstname,
         lastname,
         phone,
@@ -20,6 +24,14 @@ export default function ContactListItem(props) {
 
     return (
         <tr>
+            <td>
+                <div 
+                    className="deleteLink"
+                    title="Delete"
+                    onClick={() => {dispatch(remove(id))}}>
+                    X
+                </div>
+            </td>
             <td className="ucfirst">{firstname}</td>
             <td className="ucfirst">{lastname}</td>
             <td><PhoneNumber phoneNumber={phone} /></td>

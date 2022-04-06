@@ -1,11 +1,15 @@
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Card, ListGroup } from 'react-bootstrap';
 import Address from '../address/Address';
 import PhoneNumber from '../phoneNumber/PhoneNumber';
 import MailTo from '../mailTo/MailTo';
+import { remove } from '../contactsCollection/ContactsSlice';
 
 export default function ContactCard(props) {
+    const dispatch = useDispatch();
     const {
-        // id,
+        id,
         firstname,
         lastname,
         phone,
@@ -35,6 +39,12 @@ export default function ContactCard(props) {
                 <span className="name ucfirst">
                     {lastname}
                 </span>
+                <div 
+                    className="deleteLink"
+                    title="Delete"
+                    onClick={() => {dispatch(remove(id))}}>
+                    X
+                </div>
             </Card.Title>
             <ListGroup variant="flush">
                 <ListGroup.Item>

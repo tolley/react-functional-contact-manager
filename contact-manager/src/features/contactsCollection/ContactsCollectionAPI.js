@@ -1,5 +1,5 @@
 // Import our contact data, this will be an ajax request later
-import contacts from '../../data/contacts';
+import contacts from '../../data/contacts.json';
 
 // Mock ajax response, for use until I get a backend API up
 const response = {
